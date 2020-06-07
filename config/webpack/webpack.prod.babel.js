@@ -1,4 +1,6 @@
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // installed via npm
+
+
 
 import paths from './paths';
 
@@ -10,9 +12,8 @@ module.exports = {
         chunkFilename: '[name].[chunkhash].js'
     },
     plugins: [
-        new CleanWebpackPlugin([paths.outputPath.split('/').pop()], {
-            root: paths.root
-        })
+       
+        new CleanWebpackPlugin(),
     ],
     devtool: 'source-map'
 };
