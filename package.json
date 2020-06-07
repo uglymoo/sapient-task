@@ -1,4 +1,5 @@
 {
+    "homepage": "https://uglymoo.github.io/sapient-task/",
     "name": "react-bolt",
     "version": "1.0.0",
     "description": "⚡ The most simple & robust boilerplate for your React projects.",
@@ -33,7 +34,6 @@
     "bugs": {
         "url": "https://github.com/leonardomso/react-bolt/issues"
     },
-    "homepage": "https://github.com/leonardomso/react-bolt#readme",
     "devDependencies": {
         "@babel/cli": "^7.4.3",
         "@babel/core": "^7.4.3",
