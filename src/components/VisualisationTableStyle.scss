@@ -1,0 +1,27 @@
+.visualizationTable {
+    tbody tr {
+         border-bottom: 0;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: lightgrey;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: white;
+    }
+}
+
+.row {
+    background-color: orangered;
+}
+
+.rowHeaderData {
+    color: white;
+    font-size: 16px;
+    font-family: Helvetica;
+}
+
+.table {
+    width: 350%;
+}
