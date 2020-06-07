@@ -38,9 +38,10 @@ const App = () => (
     <Container>
         <Wrapper>
             <Title>
-                <span role="img" aria-label="Bolt">
-                    ⚡
-                </span>{' '}
+                  <img
+                      src ="../src/assets/public-sapient.png"
+                   />
+                   
                 React Bolt Aman
             </Title>
             <Paragraph>The most simple and robust React boilerplate.</Paragraph>
