@@ -41,7 +41,7 @@ const App = () => (
                 <span role="img" aria-label="Bolt">
                     ⚡
                 </span>{' '}
-                React Bolt
+                React Bolt Aman
             </Title>
             <Paragraph>The most simple and robust React boilerplate.</Paragraph>
             <Paragraph>
