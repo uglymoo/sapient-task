@@ -7,7 +7,7 @@ import { VisualisationChart } from './VisualisationChart'
 
 
 
-
+let born = false;
 
 export const VisualisationTable = (props) => {
     const [data, setData] = useState(null)
@@ -19,7 +19,7 @@ export const VisualisationTable = (props) => {
         const IndexValue = index;
         console.log("VOTED VALUE",votedvalue);
         console.log("INDEX VALUE",IndexValue);
-        let upVoted =data;
+       let upVoted =data;
 
          console.log("DATA IS THERE",upVoted);
          data && upVoted.hits.map((vote,i) => {
@@ -27,7 +27,12 @@ export const VisualisationTable = (props) => {
             {
                 return vote.relevancy_score = votedvalue;
             }
-            setData(upVoted)
+            
+    
+        })
+        console.log("UPDATED VALUE--->",upVoted);
+        setData({
+            ...data,upVoted
         })
    
 
@@ -42,6 +47,13 @@ export const VisualisationTable = (props) => {
     }, []);
 
 
+    //   useEffect(()=> {
+    //       if(born) {
+    //         setData(data)
+    //       }
+    //       else born = false;
+
+    //   })
 
     const renderRows = (rows) => {
 
@@ -50,7 +62,7 @@ export const VisualisationTable = (props) => {
             <tbody className="visualisationRowTree">
                 {
 
-                    data && data.hits.map((row,index) => {
+                    data &&  data.hits.map((row,index) => {
 
                         return (
                             <tr>
