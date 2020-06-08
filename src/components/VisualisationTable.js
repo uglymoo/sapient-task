@@ -156,9 +156,12 @@ export const VisualisationTable = (props) => {
             </div>
 
 
-            <div style={{ width: '1350px', border: 'solid', borderTop: 'unset' }}>
-                <VisualisationChart />
-            </div>
+            
+            {
+                data && <div style={{ width: '1350px', border: 'solid', borderTop: 'unset' }}> <VisualisationChart chartValues = {data} /> </div>
+            }
+               
+        
 
 
         </div>

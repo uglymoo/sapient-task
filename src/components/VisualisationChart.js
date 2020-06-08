@@ -20,9 +20,9 @@ class VisualisationChart extends React.Component {
             }
           }
         },
-            series: [{
+        series: [{
         name: 'ID',
-        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+        data: []
     }],
 
     yAxis: {
@@ -51,7 +51,7 @@ class VisualisationChart extends React.Component {
             label: {
                 connectorAllowed: false
             },
-            pointStart: 2010
+            pointStart: 2000
         }
     },
     responsive: {
@@ -72,23 +72,62 @@ class VisualisationChart extends React.Component {
     };
   }
 
+
+  componentWillReceiveProps = () => {
+    this.setState({
+      options: {
+        series: [
+          
+          {
+            name: 'ID',
+            data: [
+              this.props.chartValues.hits.map((dataValue)=>{
+                console.log("DATA VALUES",dataValue);
+                return dataValue.points
+            }),
+            
+              
+              this.props.chartValues.hits.map((dataValue)=>{
+                console.log("DATA VALUES",dataValue);
+                return dataValue.relevancy_score
+            }),
+            
+            
+
+            ]
+          },
+        ]
+      }
+    });
+
+  }
+
   componentDidMount() {
-    setInterval(() => {
       this.setState({
         options: {
           series: [
+            
             {
+              name: 'ID',
               data: [
-                Math.random() * 20,
-                Math.random() * 20,
-                Math.random() * 20,
-                Math.random() * 20
+                this.props.chartValues.hits.map((dataValue)=>{
+                  console.log("DATA VALUES",dataValue);
+                  return dataValue.points
+              }),
+              
+                
+                this.props.chartValues.hits.map((dataValue)=>{
+                  console.log("DATA VALUES",dataValue);
+                  return dataValue.relevancy_score
+              }),
+              
+              
+
               ]
             },
           ]
         }
       });
-    }, 1000);
   }
 
   render() {
