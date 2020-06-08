@@ -19,35 +19,25 @@ export const VisualisationTable = (props) => {
         const IndexValue = index;
         console.log("VOTED VALUE",votedvalue);
         console.log("INDEX VALUE",IndexValue);
-        let upVoted =[];
+        let upVoted =data;
 
-        if(data) {
-         upVoted = data.hits;
          console.log("DATA IS THERE",upVoted);
-         data && upVoted.map((vote,i) => {
+         data && upVoted.hits.map((vote,i) => {
             if(IndexValue === i) 
             {
                 return vote.relevancy_score = votedvalue;
             }
+            setData(upVoted)
         })
-       //  setData(upVoted);
- 
-    }
- 
-
-  
-
+   
 
     }
 
     useEffect(async () => {
-
-
             const response = await fetch('http://hn.algolia.com/api/v1/search?query=bar&tags=comment');
-                const data =  await response.json();
-                  console.log("Data---->", data);
-                    setData(data);
-
+                const dataValue =  await response.json();
+                  console.log("Data---->", dataValue);
+                    setData(dataValue);
 
     }, []);
 
